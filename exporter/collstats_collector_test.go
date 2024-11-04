@@ -59,19 +59,19 @@ func TestCollStatsCollector(t *testing.T) {
 	expected := strings.NewReader(`
 # HELP mongodb_collstats_latencyStats_commands_latency collstats.latencyStats.commands.
 # TYPE mongodb_collstats_latencyStats_commands_latency untyped
-mongodb_collstats_latencyStats_commands_latency{collection="testcol_00",database="testdb"} 0
-mongodb_collstats_latencyStats_commands_latency{collection="testcol_01",database="testdb"} 0
-mongodb_collstats_latencyStats_commands_latency{collection="testcol_02",database="testdb"} 0
+mongodb_collstats_latencyStats_commands_latency{collection="testcol_00",database="testdb",shard="rs1"} 0
+mongodb_collstats_latencyStats_commands_latency{collection="testcol_01",database="testdb",shard="rs1"} 0
+mongodb_collstats_latencyStats_commands_latency{collection="testcol_02",database="testdb",shard="rs1"} 0
 # HELP mongodb_collstats_latencyStats_transactions_ops collstats.latencyStats.transactions.
 # TYPE mongodb_collstats_latencyStats_transactions_ops untyped
-mongodb_collstats_latencyStats_transactions_ops{collection="testcol_00",database="testdb"} 0
-mongodb_collstats_latencyStats_transactions_ops{collection="testcol_01",database="testdb"} 0
-mongodb_collstats_latencyStats_transactions_ops{collection="testcol_02",database="testdb"} 0
+mongodb_collstats_latencyStats_transactions_ops{collection="testcol_00",database="testdb",shard="rs1"} 0
+mongodb_collstats_latencyStats_transactions_ops{collection="testcol_01",database="testdb",shard="rs1"} 0
+mongodb_collstats_latencyStats_transactions_ops{collection="testcol_02",database="testdb",shard="rs1"} 0
 # HELP mongodb_collstats_storageStats_capped collstats.storageStats.
 # TYPE mongodb_collstats_storageStats_capped untyped
-mongodb_collstats_storageStats_capped{collection="testcol_00",database="testdb"} 0
-mongodb_collstats_storageStats_capped{collection="testcol_01",database="testdb"} 0
-mongodb_collstats_storageStats_capped{collection="testcol_02",database="testdb"} 0` +
+mongodb_collstats_storageStats_capped{collection="testcol_00",database="testdb",shard="rs1"} 0
+mongodb_collstats_storageStats_capped{collection="testcol_01",database="testdb",shard="rs1"} 0
+mongodb_collstats_storageStats_capped{collection="testcol_02",database="testdb",shard="rs1"} 0` +
 		"\n")
 
 	// Filter metrics for 2 reasons:
